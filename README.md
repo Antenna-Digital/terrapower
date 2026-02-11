@@ -12,26 +12,14 @@ This repository contains the official HTML email signatures for TerraPower and T
 
 There are two ways to update the signature with your personal details (Name, Title, Phone).
 
-### Option A: Edit the HTML File (Recommended)
-1.  **Open** the `.html` file in a text editor (like Notepad, TextEdit, or VS Code).
-2.  **Find** the following lines and replace the text with your own:
-    - `Myleas Williams` → Your Name
-    - `Senior Contract Administrator...` → Your Title
-    - `+1 (608) 628-8598` → Your Phone Number
-    - `mwilliams@terrapower.com` → Your Email Address (update both the text and the `mailto:` link).
-3.  **Save** the file.
-4.  **Open** the saved file in your web browser (Chrome, Edge, or Safari).
-5.  **Copy** the signature (Press `Ctrl+A` then `Ctrl+C`).
-6.  **Paste** into Outlook (see below).
-
-### Option B: Edit Directly in Outlook
+### Edit Directly in Outlook
 1.  **Open** the `.html` file in your web browser.
 2.  **Copy** the signature (Press `Ctrl+A` then `Ctrl+C`).
 3.  Go to Outlook **Settings** > **Signatures**.
 4.  **Paste** (`Ctrl+V`) the signature into the box.
 5.  **Edit** the text directly inside the Outlook signature editor. 
     > [!NOTE]
-    > Outlook's editor can sometimes be finicky with spacing. If the layout breaks, use Option A instead.
+    > Outlook's editor can sometimes be finicky with spacing and removing styles. It is best to not remove entire lines of text without adding your own.
 
 ---
 
