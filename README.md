@@ -40,6 +40,9 @@ There are two ways to update the signature with your personal details (Name, Tit
 
 ---
 
-## Technical Notes
-- **Images**: Logos and social icons are hosted on GitHub. They will load automatically for anyone receiving your emails.
-- **Links**: Phone numbers and emails are set up to be "clickable" on mobile devices.
+## Mobile Optimization
+The signatures have been optimized for mobile display with:
+- **Reduced Spacing**: Vertical gaps between elements have been reduced by 50% for a more compact feel.
+- **Refined Typography**: Font sizes and line heights have been adjusted to ensure clarity on smaller screens while maintaining professional aesthetics.
+- **Fixed Width**: The 520px container remains to ensure consistent rendering across email clients.
+
