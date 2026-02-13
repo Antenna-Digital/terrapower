@@ -232,24 +232,22 @@
 
         <div class="form-group">
             <label for="input-name">Full Name</label>
-            <input type="text" id="input-name" placeholder="Myleas Williams" value="Myleas Williams">
+            <input type="text" id="input-name" placeholder="Full Name" value="Full Name">
         </div>
 
         <div class="form-group">
             <label for="input-position">Position</label>
-            <input type="text" id="input-position" placeholder="Senior Contract Administrator"
-                value="Senior Contract Administrator (Corporate Service)">
+            <input type="text" id="input-position" placeholder="Position" value="Position">
         </div>
 
         <div class="form-group">
             <label for="input-email">Email Address</label>
-            <input type="email" id="input-email" placeholder="mwilliams@terrapower.com"
-                value="mwilliams@terrapower.com">
+            <input type="email" id="input-email" placeholder="email@terrapower.com" value="email@terrapower.com">
         </div>
 
         <div class="form-group">
             <label for="input-phone">Phone Number</label>
-            <input type="text" id="input-phone" placeholder="+1 (608) 628-8598" value="+1 (608) 628-8598">
+            <input type="text" id="input-phone" placeholder="+1 (555) 555-5555" value="+1 (555) 555-5555">
         </div>
     </div>
 
@@ -397,9 +395,43 @@
             preview.innerHTML = generateSignatureHTML();
         }
 
+        // Phone Formatting Logic
+        inputs.phone.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, ''); // Remove all non-digits
+
+            // Limit to 11 digits (1 for country code + 10 for number)
+            if (value.length > 11) value = value.substring(0, 11);
+
+            let formattedValue = '';
+
+            if (value.length > 0) {
+                formattedValue = '+1 ';
+
+                // If the user typed 1 as the first digit, ignore it and treat the rest as the number
+                // if they typed more than 10 digits total.
+                let startIdx = (value.length > 10 && value[0] === '1') ? 1 : 0;
+                let numPart = value.substring(startIdx);
+
+                if (numPart.length > 0) {
+                    formattedValue += '(' + numPart.substring(0, 3);
+                }
+                if (numPart.length > 3) {
+                    formattedValue += ') ' + numPart.substring(3, 6);
+                }
+                if (numPart.length > 6) {
+                    formattedValue += '-' + numPart.substring(6, 10);
+                }
+            }
+
+            e.target.value = formattedValue;
+            updatePreview();
+        });
+
         // Event Listeners
-        Object.values(inputs).forEach(input => {
-            input.addEventListener('input', updatePreview);
+        Object.keys(inputs).forEach(key => {
+            if (key !== 'phone') {
+                inputs[key].addEventListener('input', updatePreview);
+            }
         });
 
         toggles.forEach(btn => {
